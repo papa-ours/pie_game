@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pie Game</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+  <script src="sketch.js" type="text/javascript"></script>
+  <script src="tarte.js" type="text/javascript"></script>
+
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      background-color: rgb(128, 9, 29);
+    }
+
+    canvas {
+      vertical-align: top;
+    }
+
+    .score {
+      font-family: sans-serif;
+      font-weight: 600;
+      font-size: 40px;
+    }
+
+    .game-container {
+      position: absolute;
+      width: 900px;
+      left: 25%;
+      top: 2.5%;
+      align-items: center;
+      margin-left: 40px;
+      padding-top: 20px;
+      padding-bottom: 50px;
+      background: #E24E42;
+    }
+
+    .fa-chart-pie {
+      text-align: center;
+      font-size: 60px;
+    }
+
+    .score-container {
+      text-align: center;
+      color: #E9B000;
+    }
+
+    #canvas-container {
+      background-color: #E0E0E0;
+      border-radius: 20px;
+      margin-left: 35px;
+      margin-right: 35px;
+      padding-left: 15px;
+    }
+
+    .game-over {
+      position: absolute;
+      color: white;
+      font-family: sans-serif;
+      width: 900px;
+      display: none;
+      flex-direction: column;
+      text-align: center;
+      height: 975px;
+      top: 2.5%;
+      font-size: 60px;
+      align-items: center;
+      justify-content: center;
+      margin-top: -22px;
+    }
+
+    .game-over .bg {
+      background-color: rgb(50, 50, 50);
+      opacity: 0.6;
+      width: 900px;
+      height: 1200px;
+    }
+
+    .fa-redo-alt {
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+
+    #game-over-tag {
+      position: absolute;
+    }
+
+    button {
+      padding: 10px;
+      position: absolute;
+      margin-top: 80px;
+      font-size: 50px;
+      border-radius: 4px;
+    }
+
+    button:focus {
+      outline: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="game-container">
+    <div class="game-over">
+      <div class="bg"></div>
+      <div id="game-over-tag"></div>
+      <button onclick="rejouer()">
+        <span class="fas fa-redo-alt"></span>Rejouer
+      </button>
+    </div>
+    <div class="score-container">
+      <div class="fas fa-chart-pie"></div>
+      <div class="score"></div>
+    </div>
+    <div id="canvas-container">
+    </div>
+  </div>
+</body>
+</html>
